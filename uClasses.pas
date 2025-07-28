@@ -12,9 +12,7 @@ interface
     Level: Integer;
     Dano: Integer;
     Defesa: Integer;
-
     constructor Create(aDano, aDefesa: Integer);
-
   end;
 
   //Herança
@@ -22,9 +20,7 @@ interface
     NickName: String;
     Experience: Double;
   end;
-
   type TBoss = class (TPersonagem)
-
   end;
 
 implementation
