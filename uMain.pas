@@ -8,8 +8,13 @@ uses
 
 type
   TForm2 = class(TForm)
-    Button1: TButton;
-    procedure Button1Click(Sender: TObject);
+    btnDano: TButton;
+    btnVida: TButton;
+    btnDefesa: TButton;
+    edtScript: TEdit;
+    procedure btnDanoClick(Sender: TObject);
+    procedure btnVidaClick(Sender: TObject);
+    procedure btnDefesaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -25,14 +30,23 @@ implementation
 
 uses uClasses;
 
-procedure TForm2.Button1Click(Sender: TObject);
+procedure TForm2.btnDanoClick(Sender: TObject);
 var personagem:TPersonagem;
-    player:TPlayer;
-
 begin
-    personagem:=TPersonagem.Create(10, 10);
-    personagem.Nome:='Teste';
+    personagem.setDano(10);
+end;
 
+procedure TForm2.btnDefesaClick(Sender: TObject);
+var personagem:TPersonagem;
+begin
+    personagem.setDefesa(10);
+end;
+
+procedure TForm2.btnVidaClick(Sender: TObject);
+var personagem:TPersonagem;
+begin
+    personagem := TPersonagem.Create(10, 10, 20);
+    personagem.setVida(20);
 end;
 
 end.
