@@ -45,4 +45,13 @@ object Form2: TForm2
     Height = 23
     TabOrder = 3
   end
+  object btnBoss: TButton
+    Left = 368
+    Top = 176
+    Width = 75
+    Height = 25
+    Caption = 'Boss'
+    TabOrder = 4
+    OnClick = btnBossClick
+  end
 end

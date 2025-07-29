@@ -34,9 +34,14 @@ interface
   type TPlayer = class (TPersonagem)
     NickName: String;
     Experience: Double;
+    function getDano: Integer;
+    procedure setDano(ADano: Integer);
   end;
 
   type TBoss = class (TPersonagem)
+    Especial: String;
+    function getDano: Integer;
+    procedure setDano(ADano: Integer);
   end;
 
 implementation
@@ -52,7 +57,8 @@ end;
 
 function TPersonagem.getDano: Integer;
 begin
-  Result := Self.Dano+(Self.Level * 10);
+  Result := Self.Dano;
+  //Result := Self.Dano+(Self.Level * 10);
 end;
 
 function TPersonagem.getDefesa: Integer;
@@ -72,9 +78,9 @@ end;
 
 procedure TPersonagem.setDano(ADano: Integer);
 begin
-  if ADano < 1 then begin
-   raise Exception.Create('O dano tem que ser maior que zero. TPersonagem.setDano');
-  end;
+  //if ADano < 1 then begin
+   //raise Exception.Create('O dano tem que ser maior que zero. TPersonagem.setDano');
+  //end;
   Self.Dano:= ADano;
 end;
 
@@ -98,4 +104,27 @@ begin
   end;
   Self.Vida := AVida;
 end;
+
+ //
+function TPlayer.getDano: Integer;
+begin
+  Result := Self.Dano;
+end;
+
+procedure TPlayer.setDano(ADano: Integer);
+begin
+  Self.Dano:= ADano;
+end;
+
+
+function TBoss.getDano: Integer;
+begin
+  Result := Self.Dano;
+end;
+
+procedure TBoss.setDano(ADano: Integer);
+begin
+  Self.Dano:= ADano;
+end;
+
 end.

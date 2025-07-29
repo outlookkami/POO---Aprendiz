@@ -12,9 +12,11 @@ type
     btnVida: TButton;
     btnDefesa: TButton;
     edtScript: TEdit;
+    btnBoss: TButton;
     procedure btnDanoClick(Sender: TObject);
     procedure btnVidaClick(Sender: TObject);
     procedure btnDefesaClick(Sender: TObject);
+    procedure btnBossClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,6 +31,17 @@ implementation
 {$R *.dfm}
 
 uses uClasses;
+
+procedure TForm2.btnBossClick(Sender: TObject);
+var player: TPlayer;
+var boss: TBoss;
+begin
+
+    boss.setDano(100);
+    player.setDano(50);
+
+    //
+end;
 
 procedure TForm2.btnDanoClick(Sender: TObject);
 var personagem:TPersonagem;
